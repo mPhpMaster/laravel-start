@@ -172,53 +172,6 @@ if ( !function_exists('fixPath') ) {
     }
 }
 
-if ( !function_exists('includeMenus') ) {
-    /**
-     * Include menu files
-     *
-     * @param string     $menuDir
-     * @param null|array $mergeWith
-     * @param string     $partialsDirName
-     *
-     * @return array
-     */
-    function includeMenus($menuDir, $mergeWith = null, $partialsDirName = "menus")
-    {
-        $partialsDirName = trim($partialsDirName, "\\");
-
-        $menu = collect();
-        $menus = toCollect(
-            includeAllSubFiles(
-                $menuDir . "\\{$partialsDirName}\\",
-                "",
-                function ($file) {
-                    return includeOnceIfExists($file, [], []);
-                }
-            )
-        );
-//        dd(
-//            $menus
-//        );
-//        $menus->each(function ($v) use (&$menu) {
-//            $menu = $menu->mergeRecursive($v);
-//        });
-
-        $menu = $menus;
-        if ( !is_null($mergeWith) ) {
-            $menu = $menu->mergeRecursive($mergeWith);
-        }
-
-//if($menu->isEmpty()) {
-//    dump([
-//        $menuDir . "\\{$partialsDirName}\\",
-//        str_before(basenameOf($partialsFile), ".php"),
-//        $menu->all()
-//    ]);
-//}
-        return $menu->all();
-    }
-}
-
 if ( !function_exists('filenameWithoutExtension') ) {
     /**
      * returns the given filename with out extension

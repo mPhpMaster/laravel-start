@@ -3,13 +3,6 @@
  * Copyright © 2021. mPhpMaster(https://github.com/mPhpMaster) All rights reserved.
  */
 
-if ( !defined('DIRECTORY_SEPARATOR_L') ) {
-    /**
-     * opposite of DIRECTORY_SEPARATOR
-     */
-    @define("DIRECTORY_SEPARATOR_L", "/");
-}
-
 // region: Getters
 if ( !function_exists('getModelAbstractClass') ) {
     /**
