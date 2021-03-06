@@ -1,0 +1,31 @@
+{
+    "name": "@mphpmaster/laravel-start",
+    "version": "0.1.0",
+    "description": "Laravel Helpers: Laravel Start",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mPhpMaster/laravel-start.git"
+    },
+    "keywords": [
+        "laravel",
+        "helpers", 
+        "class", 
+        "function", 
+        "php", 
+        "provider", 
+        "starter"
+    ],
+    "author": "mPhpMaster",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mPhpMaster/laravel-start/issues"
+    },
+    "homepage": "https://github.com/mPhpMaster/laravel-start#readme",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    }
+}
