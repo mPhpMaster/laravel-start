@@ -62,7 +62,7 @@
 
 
 - Views:
-    1. `js_routes`.
+    1. `js_routes`, _USAGE: `laravel-start::js_routes`_.
 
 ## License
 
