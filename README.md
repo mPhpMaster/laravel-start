@@ -64,6 +64,10 @@
 - Views:
     1. `js_routes`, _USAGE: `laravel-start::js_routes`_.
 
+
+- Publishables:
+    * `php artisan vendor:publish --tag=js_routes`.
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
