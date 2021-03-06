@@ -197,7 +197,7 @@ if ( !function_exists('countToken') ) {
 }
 // endregion: Getters
 
-// region: Is
+// region: is
 /**
  * return bool
  */
@@ -212,6 +212,18 @@ if ( !function_exists('isClosure') ) {
     function isClosure($closure): bool
     {
         return $closure instanceof Closure;
+    }
+}
+
+if ( !function_exists('is_collection') ) {
+    /**
+     * @param $var
+     *
+     * @return bool
+     */
+    function is_collection(&$var): bool
+    {
+        return $var instanceof \Illuminate\Support\Collection;
     }
 }
 
@@ -312,7 +324,7 @@ if ( !function_exists('isArrayable') ) {
             method_exists($array, 'toArray');
     }
 }
-// endregion: Is
+// endregion: is
 
 // region: to
 if ( !function_exists('toCollect') ) {
