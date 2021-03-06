@@ -45,12 +45,14 @@ class HelpersProvider extends ServiceProvider
         Builder::defaultStringLength(191);
         Schema::defaultStringLength(191);
 
+        $this->loadViewsFrom(__DIR__.'/Views', 'laravel-start');
+
         if ($this->app->runningInConsole())
         {
             $this->publishes([
                 __DIR__ . '/../Views/js_routes.blade.php' =>
-                    resource_path("views"),
-            ], 'views');
+                    $this->app->resourcePath('views/vendor/laravel-start/js_routes.blade.php'),
+            ], 'js_routes');
         }
         
 
@@ -71,6 +73,7 @@ class HelpersProvider extends ServiceProvider
                 $value = ltrim($value, '966');
                 return \Illuminate\Support\Str::startsWith("0{$value}", "05") && strlen($value) === 9;
             });
+        $this->map();
     }
 
 
@@ -130,11 +133,11 @@ class HelpersProvider extends ServiceProvider
     protected function mapJSRoutes()
     {
         Route::prefix('JS')->as('js::')->group(function () {
-            Route::get('routes_script', "\\mPhpMaster\\LaravelStart\\Controllers\\JSRoutes\\JSRoutes@routes")->name('routes');
-            Route::get('routes/{any?}', "\\mPhpMaster\\LaravelStart\\Controllers\\JSRoutes\\JSRoutes@print_routes")->name('print_routes');
+            Route::get('routes_script', "\\mPhpMaster\\LaravelStart\\Controllers\\JSRoutes@routes")->name('routes');
+            Route::get('routes/{any?}', "\\mPhpMaster\\LaravelStart\\Controllers\\JSRoutes@print_routes")->name('print_routes');
         });
-// alias for line: 7
-        Route::get('routes/{any?}', "\\mPhpMaster\\LaravelStart\\Controllers\\JSRoutes\\JSRoutes@print_routes")->name('print_routes_no_ns');
+// alias for line: 137
+        Route::get('routes/{any?}', "\\mPhpMaster\\LaravelStart\\Controllers\\JSRoutes@print_routes")->name('print_routes_no_ns');
     }
     
     /**

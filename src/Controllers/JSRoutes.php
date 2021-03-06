@@ -44,7 +44,7 @@ class JSRoutes
     {
         $ret = self::getRoutes();
 
-        $contents = View::make('js_routes')->with('content', $ret);
+        $contents = View::make('laravel-start::js_routes')->with('content', $ret);
         $response = Response::make($contents, 200);
         $response->header('Content-Type', 'application/javascript');
 
